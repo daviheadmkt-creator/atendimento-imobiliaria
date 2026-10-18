@@ -1,0 +1,14 @@
+import { globalIgnores } from "eslint/config";
+import tseslint from "typescript-eslint";
+
+const eslintConfig = tseslint.config(
+  ...tseslint.configs.recommended,
+  globalIgnores([
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+);
+
+export default eslintConfig;
